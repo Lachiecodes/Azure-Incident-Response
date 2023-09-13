@@ -3,6 +3,9 @@
 In this project, the aim was to emulate the work of an SOC Analyst. Incident tickets where opened and investigated, and I tried to determine whether the incidents were legitimate. If so, I would either close out the incidents or escalate them as necessary.
 
 Although there was a large volume of brute force attempts generated through the creation of the honeypots, it was rare for them to have a successful login attempt. These higher severity tickets where generated through the use of powershell scripts, except for the one Linux brute force success which was a true positive.
+
+## NIST 800-61 Incident Response Framework
+
 ## Incident 1: Brute Force Success (Windows)
 **Step 2: Detection and Analysis**
 
