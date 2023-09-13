@@ -1,4 +1,4 @@
-# Incident Reponse in Azure Sentinel using NIST 800-61
+# Incident Reponse in Azure Sentinel Using NIST 800-61
 ## Introduction
 ## NIST 800-61 Incident Reponse Framework
 ## Incident 1: Brute Force Success (Windows)
