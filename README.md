@@ -39,12 +39,16 @@ Although there was a large volume of brute force attempts generated through the 
 
 
 - Although a false positive was generated, we still have a medium level issue to resolve since this type of traffic should not be reaching the windows-vm in the first place.
-- Closing out incident as false positive but will start the process for hardening network security groups.
+- Closing out incident as false positive but will start the process for hardening network security groups.<br>
+
+
+![Screenshot 2023-09-05 203815](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/6524ed42-0e51-4602-963d-a4ff4dda4984)
+
 
 **Step 3: Containment, Eradication and Recovery**
 
-- Lock down the network security group assigned to the windows-vm and subnet by only allowing traffic from known IP Addresses that you will be accessing your VPC from.
-- Enable MFA for all user accounts in Azure AD.
+- I locked down the network security group assigned to the windows-vm and subnet by only allowing traffic from known IP Addresses that I will be accessing the VNet from.
+- I enabled MFA for all user accounts on the virtual machine and in Azure AD.
   
 ## Incident 2: Possible Privilege Escalation (Azure Active Directory)
 **Step 2: Detection and Analysis**
