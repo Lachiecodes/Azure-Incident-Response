@@ -27,6 +27,69 @@ Incident ID 190
 
 - Lock down the network security group assigned to the windows-vm and subnet by only allowing traffic from known IP Addresses that you will be accessing your VPC from.
 - Enable MFA for all user accounts in Azure AD.
+- 
 ## Incident 2: Possible Privilege Escalation (Azure Active Directory)
+**Step 2: Detection and Analysis**
+
+CUSTOM: Possible Privilege Escalation (Azure Key Vault Critical Credential Retrieval or Update)
+
+Incident ID 231
+
+- Incident was triggered on 05/09/2023 10:24pm
+- Same user viewed critical credentials several times:
+
+Name - Lachlan Simpson
+
+User Principal Name - lachie.simpson_hotmail.com#EXT#@lachiesimpsonhotmail.onmicrosoft.com
+
+- Not only did this user view the critical credentials multiple times, they also are involved in several other incidents including excessive password resets and global admin role assignment
+- After calling the above user, they confirmed that they were just doing their normal duties, corroborated this with their manager. Closing out for benign positive.
 ## Incident 3: Brute Force Success (Linux)
+**Step 2: Detection and Analysis**
+
+CUSTOM: Brute Force SUCCESS - Linux Syslog
+
+Incident ID 262
+
+- Incident was triggered on 06/09/2023 10:14am
+- Attacker at IP Address 1.157.141.118 involved in several other incidents.
+- Several alerts have triggered and incidents have been automatically created based on action from this IP address.
+- These incidents include several failed brute force attempts on Linux Syslog, a number of failed Azure AD brute force attempts and one successful Azure AD brute force login.
+- The event was confirmed to be a true positive through querying the attacker IP address in Syslog logs.
+
+**Step 3: Containment, Eradication and Recovery**
+
+Initial response actions:
+
+- The origin of the attacks was determined to be 1.157.141.118 and it was confirmed that this IP has been involved other brute force attacks on Azure AD.
+- This event occurred to network security groups not being properly configured and is currently wide open to the public internet.
+- The affected machine was immediately de-allocated to isolate it from the VPC
+
+This event was remediated by:
+
+- Resetting the password for the compromised user.
+- Lock down the network security group assigned to the linux-vm and subnet by only allowing traffic from known IP Addresses that you will be accessing your VPC from.
+
+Impact:
+
+- Account was local to the linux machine, non-admin, essentially low impact. However, attacker involved in many other incidents. These will be remediated through NSG hardening
 ## Incident 4: Malware Detected
+**Step 2: Detection and Analysis**
+
+CUSTOM: Malware Detected
+
+Incident ID 259
+
+- Incident was triggered on 06/09/2023 9:34am
+- The host machine affected was windows-vm
+- Several other security alerts have been associated with this VM.
+- As far as malware goes, this alert was a false positive because it looks like the user was testing with EICAR files.
+- Here is the KQL query we used:
+
+SecurityAlert
+| where AlertType == "AntimalwareActionTaken"
+| where CompromisedEntity == "windows-vm"
+| where RemediationSteps !has "No user action necessary"
+
+- Corroborated with user and user manager to determine if this false positive checks out with them. They confirmed that they were testing the anti-malware software on the machine.
+- Closed out ticket as false positive.
