@@ -71,7 +71,7 @@ Initial response actions:
 
 - The origin of the attacks was determined to be 1.157.141.118 and it was confirmed that this IP has been involved other brute force attacks on Azure AD.
 - This event occurred to network security groups not being properly configured and is currently wide open to the public internet.
-- The affected machine was immediately de-allocated to isolate it from the VPC
+- The affected machine was immediately de-allocated to isolate it from other systems on the virtual private cloud.
 
 This event was remediated by:
 
