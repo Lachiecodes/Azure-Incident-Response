@@ -17,19 +17,29 @@ Although there was a large volume of brute force attempts generated through the 
 ## Incident 1: Brute Force Success (Windows)
 **Step 2: Detection and Analysis**
 
-CUSTOM: Brute Force SUCCESS - Windows
-
-Incident ID 190
+![Screenshot 2023-09-05 193524](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/11e3dfa1-8dd5-4a05-9f91-75be9b8b511f)
 
 - Incident was triggered on 05/09/2023 3:39 pm
 - Affected Machine: windows-vm
 - AttackerIP: 188.128.73.66 (Yekaterinburg, Russia)
-- Attacker entity failed 5 previous brute attempts earlier in the day before the final successful attempt.
+- Attacker entity failed 5 previous brute attempts earlier in the day before the final successful attempt.<br>
+
+![Screenshot 2023-09-05 195042](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/45aedba5-fcd5-40ba-ab29-374145a1c7c8)<br>
+
+ 
 - Potentially comprised system ‘windows-vm’ involved in several other incidents/alerts. Possible overexposure to public internet
-- Inspected actions from 188.128.73.66, there were 12 “successes” from the MOVS/Anonymous account but upon further investigation it was found that the alert raised was a false positive created by a service account.
-- After the “successes” the attacker continued brute force attempts at the system, which suggests that they had not gained any significant access to user/admin accounts in Azure AD, such as “labuser”.
+- Inspected actions from 188.128.73.66, there were 12 “successes” from the MOVS/Anonymous account but upon further investigation it was found that the alert raised was a false positive created by a service account.<br>
+
+![Screenshot 2023-09-05 201937](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/50661698-24f2-46c3-8a6f-5dc2c2e9c2b3)<br>
+
+  
+- After the “successes” the attacker continued brute force attempts at the system, which suggests that they had not gained any significant access to user/admin accounts in Azure AD, such as “labuser”.<br>
+
+![Screenshot 2023-09-05 201759](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/9d4a604a-4d54-4259-9b4a-b3d92b02c84e)<br>
+
+
 - Although a false positive was generated, we still have a medium level issue to resolve since this type of traffic should not be reaching the windows-vm in the first place.
-- Closing out incident as false positive but will start the process for hardening NSGs.
+- Closing out incident as false positive but will start the process for hardening network security groups.
 
 **Step 3: Containment, Eradication and Recovery**
 
@@ -41,7 +51,7 @@ Incident ID 190
 
 CUSTOM: Possible Privilege Escalation (Azure Key Vault Critical Credential Retrieval or Update)
 
-Incident ID 231
+Incident ID: 231
 
 - Incident was triggered on 05/09/2023 10:24pm
 - Same user viewed critical credentials several times:
@@ -57,7 +67,7 @@ User Principal Name - lachie.simpson_hotmail.com#EXT#@lachiesimpsonhotmail.onmic
 
 CUSTOM: Brute Force SUCCESS - Linux Syslog
 
-Incident ID 262
+Incident ID: 262
 
 - Incident was triggered on 06/09/2023 10:14am
 - Attacker at IP Address 1.157.141.118 involved in several other incidents.
@@ -86,7 +96,7 @@ Impact:
 
 CUSTOM: Malware Detected
 
-Incident ID 259
+Incident ID: 259
 
 - Incident was triggered on 06/09/2023 9:34am
 - The host machine affected was windows-vm
