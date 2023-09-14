@@ -33,7 +33,7 @@ Although there was a large volume of brute force attempts generated through the 
 ![Screenshot 2023-09-05 201937](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/50661698-24f2-46c3-8a6f-5dc2c2e9c2b3)<br>
 
   
-- After the “successes” the attacker continued brute force attempts at the system, which suggests that they had not gained any significant access to user/admin accounts in Azure AD, such as “labuser”.<br>
+- After the “successes” the attacker continued brute force attempts at the system, which suggests that they had not gained any significant access to user/admin accounts on the system, such as the “labuser”.<br>
 
 ![Screenshot 2023-09-05 201759](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/9d4a604a-4d54-4259-9b4a-b3d92b02c84e)<br>
 
