@@ -5,6 +5,14 @@ In this project, the aim was to emulate the work of an SOC Analyst. Incident tic
 Although there was a large volume of brute force attempts generated through the creation of the honeypots, it was rare for them to have a successful login attempt. These higher severity tickets where generated through the use of powershell scripts, except for the one Linux brute force success which was a true positive.
 
 ## NIST 800-61 Incident Response Framework
+![Screenshot 2023-09-14 222035](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/0c2e01e8-eca0-4630-b737-445c79baaf06)<br>
+**Preparation:** This is the foundational stage where we set the stage for incident response success. We create a well-defined incident response plan tailored to our organization's needs. We identify and designate incident response team members with specific roles and responsibilities. We establish communication protocols, both within the team and with external parties like law enforcement or vendors. Additionally, we ensure we have the right tools, technologies, and resources at our disposal, such as forensic software and incident tracking systems.<br>
+
+**Detection and Analysis:** In this phase, we're like digital detectives. We constantly monitor our networks and systems for any unusual or suspicious activities. We use intrusion detection systems, log analysis tools, and security information and event management (SIEM) systems to spot signs of potential incidents. When something looks amiss, we investigate further to understand the nature and scope of the incident. We gather evidence, analyze malware, and determine how the attacker gained access.<br>
+
+**Containment, Eradication, and Recovery:** Once we confirm an incident, our immediate goal is to stop it from spreading and causing more harm. We isolate compromised systems from the network, shut down unauthorized access points, and lock down affected accounts. Simultaneously, we work to eradicate the root cause by removing malware, closing vulnerabilities, and patching systems. Our ultimate aim is to get back to business as usual, so we focus on recovery—restoring data, services, and systems to their pre-incident state.<br>
+
+**Post-Incident Activity and Lessons Learned:** After the dust settles, we don't just move on. We conduct a thorough post-incident analysis. We assess our incident response performance, identifying what we did well and where we can improve. We document lessons learned, update our incident response plan and procedures based on these insights, and ensure that any legal or compliance requirements are met. This phase is all about continuous improvement, so we're better prepared for the next incident.<br>
 
 ## Incident 1: Brute Force Success (Windows)
 **Step 2: Detection and Analysis**
@@ -27,7 +35,7 @@ Incident ID 190
 
 - Lock down the network security group assigned to the windows-vm and subnet by only allowing traffic from known IP Addresses that you will be accessing your VPC from.
 - Enable MFA for all user accounts in Azure AD.
-- 
+  
 ## Incident 2: Possible Privilege Escalation (Azure Active Directory)
 **Step 2: Detection and Analysis**
 
