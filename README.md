@@ -104,7 +104,7 @@ This event was remediated by:
 
 Impact:
 
-- Account was local to the linux machine, non-admin, essentially low impact. However, attacker involved in many other incidents. These will be remediated through NSG hardening. After the machine had been successfully isolated, the password reset, and it was confirmed that there was no successful lateral mvovement. The ticket was closed out as a true positive.<br>
+- Account was local to the linux machine, non-admin, essentially low impact. However, attacker involved in many other incidents. These will be remediated through NSG hardening. After the machine had been successfully isolated, the password reset, and it was confirmed that there was no successful lateral movement. The ticket was closed out as a true positive.<br>
 
 ![Screenshot 2023-09-06 112235](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/7e568a63-2d51-444f-a578-c0ad906cc8f2)
 
@@ -112,20 +112,22 @@ Impact:
 ## Incident 4: Malware Detected
 **Step 2: Detection and Analysis**
 
-CUSTOM: Malware Detected
+![Screenshot 2023-09-06 124254](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/3234054b-fb66-4117-9491-2e8f0e52625b)<br>
 
-Incident ID: 259
 
 - Incident was triggered on 06/09/2023 9:34am
 - The host machine affected was windows-vm
-- Several other security alerts have been associated with this VM.
-- As far as malware goes, this alert was a false positive because it looks like the user was testing with EICAR files.
-- Here is the KQL query we used:
+- Several other security alerts have been associated with this VM.<br>
 
-SecurityAlert
-| where AlertType == "AntimalwareActionTaken"
-| where CompromisedEntity == "windows-vm"
-| where RemediationSteps !has "No user action necessary"
+![Screenshot 2023-09-06 124946](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/c73e65d9-d188-4a08-bf60-96e66b3a1524)<br>
+
+
+- As far as malware goes, this alert was a false positive because it looks like the user was testing with EICAR files.
+- Here is the KQL query we used:<br>
+
+![Screenshot 2023-09-06 130223](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/da594683-7305-423c-865c-f257523eddeb)<br>
 
 - Corroborated with user and user manager to determine if this false positive checks out with them. They confirmed that they were testing the anti-malware software on the machine.
-- Closed out ticket as false positive.
+- Closed out ticket as false positive.<br>
+
+![Screenshot 2023-09-06 130915](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/6bd9da32-3906-4532-8991-a3e3cccdfb58)
