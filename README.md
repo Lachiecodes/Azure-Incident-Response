@@ -73,15 +73,21 @@ User Principal Name - lachie.simpson_hotmail.com#EXT#@lachiesimpsonhotmail.onmic
 ## Incident 3: Brute Force Success (Linux)
 **Step 2: Detection and Analysis**
 
-CUSTOM: Brute Force SUCCESS - Linux Syslog
+![Screenshot 2023-09-06 105344](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/1177d686-d8a3-4fea-8360-316d179a2a4c)<br>
 
-Incident ID: 262
 
 - Incident was triggered on 06/09/2023 10:14am
 - Attacker at IP Address 1.157.141.118 involved in several other incidents.
-- Several alerts have triggered and incidents have been automatically created based on action from this IP address.
+- Several alerts have triggered and incidents have been automatically created based on action from this IP address.<br>
+
+  ![Screenshot 2023-09-06 105550](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/e00cd2e8-ce3a-450e-aba5-c8ce5a052c44)<br>
+
 - These incidents include several failed brute force attempts on Linux Syslog, a number of failed Azure AD brute force attempts and one successful Azure AD brute force login.
-- The event was confirmed to be a true positive through querying the attacker IP address in Syslog logs.
+- The event was confirmed to be a true positive through querying the attacker IP address in Syslog logs.<br>
+
+ ![Screenshot 2023-09-06 110649](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/1b45d7c3-03b0-491a-b4c1-04a8ab2a29ed)
+
+
 
 **Step 3: Containment, Eradication and Recovery**
 
@@ -98,7 +104,11 @@ This event was remediated by:
 
 Impact:
 
-- Account was local to the linux machine, non-admin, essentially low impact. However, attacker involved in many other incidents. These will be remediated through NSG hardening
+- Account was local to the linux machine, non-admin, essentially low impact. However, attacker involved in many other incidents. These will be remediated through NSG hardening. After the machine had been successfully isolated, the password reset, and it was confirmed that there was no successful lateral mvovement. The ticket was closed out as a true positive.<br>
+
+![Screenshot 2023-09-06 112235](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/7e568a63-2d51-444f-a578-c0ad906cc8f2)
+
+  
 ## Incident 4: Malware Detected
 **Step 2: Detection and Analysis**
 
