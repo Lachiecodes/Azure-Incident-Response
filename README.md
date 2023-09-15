@@ -53,19 +53,23 @@ Although there was a large volume of brute force attempts generated through the 
 ## Incident 2: Possible Privilege Escalation (Azure Active Directory)
 **Step 2: Detection and Analysis**
 
-CUSTOM: Possible Privilege Escalation (Azure Key Vault Critical Credential Retrieval or Update)
-
-Incident ID: 231
+![Screenshot 2023-09-05 222944](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/90ceca30-453b-49c5-95d7-19b2af5e2994)<br>
 
 - Incident was triggered on 05/09/2023 10:24pm
 - Same user viewed critical credentials several times:
 
 Name - Lachlan Simpson
 
-User Principal Name - lachie.simpson_hotmail.com#EXT#@lachiesimpsonhotmail.onmicrosoft.com
+User Principal Name - lachie.simpson_hotmail.com#EXT#@lachiesimpsonhotmail.onmicrosoft.com<br>
+
+![Screenshot 2023-09-05 224003](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/dd5a97c8-61fc-4e18-93d5-67486c2249a4)<br>
 
 - Not only did this user view the critical credentials multiple times, they also are involved in several other incidents including excessive password resets and global admin role assignment
-- After calling the above user, they confirmed that they were just doing their normal duties, corroborated this with their manager. Closing out for benign positive.
+- After calling the above user, they confirmed that they were just doing their normal duties, corroborated this with their manager. Closing out for benign positive.<br>
+
+![Screenshot 2023-09-05 224048](https://github.com/Lachiecodes/Azure-Incident-Response/assets/138475757/7718dac8-4358-4719-a8ce-32928c09b8d4)
+
+
 ## Incident 3: Brute Force Success (Linux)
 **Step 2: Detection and Analysis**
 
